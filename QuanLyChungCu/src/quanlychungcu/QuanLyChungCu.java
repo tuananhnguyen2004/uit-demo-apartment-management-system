@@ -4,10 +4,9 @@
  */
 package quanlychungcu;
 
-/**
- *
- * @author lethi
- */
+import java.io.Console;
+
+// File ban dau
 public class QuanLyChungCu {
 
     /**
@@ -15,6 +14,7 @@ public class QuanLyChungCu {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("test");
     }
     
 }
