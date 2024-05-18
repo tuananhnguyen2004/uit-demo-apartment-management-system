@@ -67,7 +67,7 @@ public class TrangChu extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menu/UI/Icons8-Ios7-Household-Apartment.48.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menu/UI/assets/Icons8-Ios7-Household-Apartment.48.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -419,6 +419,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbThietBiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbThietBiActionPerformed
