@@ -45,7 +45,7 @@
     <Component class="Menu.UI.ActionButton" name="cmdEdit">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/QuanLyThietBi/edit.png"/>
+          <Image iconType="3" name="/edit.png"/>
         </Property>
       </Properties>
       <Events>
@@ -55,7 +55,7 @@
     <Component class="Menu.UI.ActionButton" name="cmdDelete">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/QuanLyThietBi/delete.png"/>
+          <Image iconType="3" name="/delete.png"/>
         </Property>
       </Properties>
       <Events>
@@ -65,7 +65,7 @@
     <Component class="Menu.UI.ActionButton" name="cmdView">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/QuanLyThietBi/view.png"/>
+          <Image iconType="3" name="/view.png"/>
         </Property>
       </Properties>
       <Events>

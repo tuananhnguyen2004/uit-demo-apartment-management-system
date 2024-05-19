@@ -30,21 +30,21 @@ public class PanelAction extends javax.swing.JPanel {
         cmdDelete = new Menu.UI.ActionButton();
         cmdView = new Menu.UI.ActionButton();
 
-        cmdEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QuanLyThietBi/edit.png"))); // NOI18N
+        cmdEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edit.png"))); // NOI18N
         cmdEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdEditActionPerformed(evt);
             }
         });
 
-        cmdDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QuanLyThietBi/delete.png"))); // NOI18N
+        cmdDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/delete.png"))); // NOI18N
         cmdDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdDeleteActionPerformed(evt);
             }
         });
 
-        cmdView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QuanLyThietBi/view.png"))); // NOI18N
+        cmdView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view.png"))); // NOI18N
         cmdView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdViewActionPerformed(evt);
