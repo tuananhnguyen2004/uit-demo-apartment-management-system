@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package QuanLyThietBi;
+package Menu.UI;
 
 /**
  *
@@ -26,9 +26,9 @@ public class PanelAction extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cmdEdit = new QuanLyThietBi.ActionButton();
-        cmdDelete = new QuanLyThietBi.ActionButton();
-        cmdView = new QuanLyThietBi.ActionButton();
+        cmdEdit = new Menu.UI.ActionButton();
+        cmdDelete = new Menu.UI.ActionButton();
+        cmdView = new Menu.UI.ActionButton();
 
         cmdEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QuanLyThietBi/edit.png"))); // NOI18N
         cmdEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -90,8 +90,8 @@ public class PanelAction extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private QuanLyThietBi.ActionButton cmdDelete;
-    private QuanLyThietBi.ActionButton cmdEdit;
-    private QuanLyThietBi.ActionButton cmdView;
+    private Menu.UI.ActionButton cmdDelete;
+    private Menu.UI.ActionButton cmdEdit;
+    private Menu.UI.ActionButton cmdView;
     // End of variables declaration//GEN-END:variables
 }

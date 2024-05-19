@@ -15,6 +15,8 @@ public class TrangChu extends javax.swing.JFrame {
      */
     public TrangChu() {
         initComponents();
+        tbl_ThietBi.getColumnModel().getColumn(4).setCellRenderer(new TableActionCellRender());
+        tbl_ThietBi.getColumnModel().getColumn(4).setCellEditor(new TableActionCellEditor());
     }
 
     /**
@@ -52,7 +54,9 @@ public class TrangChu extends javax.swing.JFrame {
         tbHopDong = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         tbThietBi = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbl_ThietBi = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         tbLichSuThanhToan = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
 
@@ -306,18 +310,62 @@ public class TrangChu extends javax.swing.JFrame {
             .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
         );
 
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("ThietBi");
+        tbl_ThietBi.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Mã thiết bị", "Tên thiết bị", "Tình trạng", "Ghi chú", "Hành động"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbl_ThietBi.setRowHeight(30);
+        jScrollPane1.setViewportView(tbl_ThietBi);
+
+        jButton1.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.hoverBorderColor"));
+        jButton1.setText("Thêm");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tbThietBiLayout = new javax.swing.GroupLayout(tbThietBi);
         tbThietBi.setLayout(tbThietBiLayout);
         tbThietBiLayout.setHorizontalGroup(
             tbThietBiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 873, Short.MAX_VALUE)
+            .addGroup(tbThietBiLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(tbThietBiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tbThietBiLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         tbThietBiLayout.setVerticalGroup(
             tbThietBiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+            .addGroup(tbThietBiLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -509,6 +557,10 @@ public class TrangChu extends javax.swing.JFrame {
         tbLichSuThanhToan.setVisible(false);
     }//GEN-LAST:event_jbHopDongActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -545,6 +597,7 @@ public class TrangChu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
@@ -553,12 +606,12 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbDangXuat;
     private javax.swing.JButton jbHoaDon;
     private javax.swing.JButton jbHopDong;
@@ -574,5 +627,6 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JPanel tbNhaCungCap;
     private javax.swing.JPanel tbThietBi;
     private javax.swing.JPanel tbTrangChu;
+    private javax.swing.JTable tbl_ThietBi;
     // End of variables declaration//GEN-END:variables
 }

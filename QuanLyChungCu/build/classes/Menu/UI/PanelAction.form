@@ -42,7 +42,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="QuanLyThietBi.ActionButton" name="cmdEdit">
+    <Component class="Menu.UI.ActionButton" name="cmdEdit">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/QuanLyThietBi/edit.png"/>
@@ -52,7 +52,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdEditActionPerformed"/>
       </Events>
     </Component>
-    <Component class="QuanLyThietBi.ActionButton" name="cmdDelete">
+    <Component class="Menu.UI.ActionButton" name="cmdDelete">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/QuanLyThietBi/delete.png"/>
@@ -62,7 +62,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdDeleteActionPerformed"/>
       </Events>
     </Component>
-    <Component class="QuanLyThietBi.ActionButton" name="cmdView">
+    <Component class="Menu.UI.ActionButton" name="cmdView">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/QuanLyThietBi/view.png"/>
