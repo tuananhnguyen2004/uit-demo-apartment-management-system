@@ -15,6 +15,8 @@ public class TrangChu extends javax.swing.JFrame {
      */
     public TrangChu() {
         initComponents();
+        tbl_HoaDon.getColumnModel().getColumn(4).setCellRenderer(new TableActionCellRender());
+        tbl_HoaDon.getColumnModel().getColumn(4).setCellEditor(new TableActionCellEditor());
     }
 
     /**
@@ -46,7 +48,9 @@ public class TrangChu extends javax.swing.JFrame {
         tbNguoiThue = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         tbHoaDon = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbl_HoaDon = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         tbNhaCungCap = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         tbHopDong = new javax.swing.JPanel();
@@ -67,7 +71,7 @@ public class TrangChu extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menu/UI/Icons8-Ios7-Household-Apartment.48.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menu/UI/assets/Icons8-Ios7-Household-Apartment.48.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -264,18 +268,62 @@ public class TrangChu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("HoaDon");
+        tbl_HoaDon.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Mã hóa đơn", "Mã người thuê", "Ngày", "Trị giá", "Hành động"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbl_HoaDon.setRowHeight(30);
+        jScrollPane1.setViewportView(tbl_HoaDon);
+
+        jButton1.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.hoverBorderColor"));
+        jButton1.setText("Thêm");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tbHoaDonLayout = new javax.swing.GroupLayout(tbHoaDon);
         tbHoaDon.setLayout(tbHoaDonLayout);
         tbHoaDonLayout.setHorizontalGroup(
             tbHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 873, Short.MAX_VALUE)
+            .addGroup(tbHoaDonLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(tbHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tbHoaDonLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tbHoaDonLayout.setVerticalGroup(
             tbHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+            .addGroup(tbHoaDonLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -508,6 +556,10 @@ public class TrangChu extends javax.swing.JFrame {
         tbLichSuThanhToan.setVisible(false);
     }//GEN-LAST:event_jbHopDongActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -544,12 +596,12 @@ public class TrangChu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -558,6 +610,7 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbDangXuat;
     private javax.swing.JButton jbHoaDon;
     private javax.swing.JButton jbHopDong;
@@ -573,5 +626,6 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JPanel tbNhaCungCap;
     private javax.swing.JPanel tbThietBi;
     private javax.swing.JPanel tbTrangChu;
+    private javax.swing.JTable tbl_HoaDon;
     // End of variables declaration//GEN-END:variables
 }
