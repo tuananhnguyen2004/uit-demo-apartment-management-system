@@ -20,26 +20,26 @@ public class TrangChu extends javax.swing.JFrame {
         TableActionEvent event = new TableActionEvent() {
             @Override
             public void onEdit(int row) {
-                System.out.println("Edit row"+row);
+                System.out.println(".onEdit()");
             }
 
             @Override
             public void onDelete(int row) {
-                if(table.isEditing())
-                {
-                    table.getCellEditor().stopCellEditing();
-                }
-                DefaultTableModel model =(DefaultTableModel) table.getModel();
-                model.removeRow(row);
+               if(tbl_NguoiThue.isEditing())
+                    {
+                        tbl_NguoiThue.getCellEditor().stopCellEditing();
+                    }
+               DefaultTableModel model = (DefaultTableModel) tbl_NguoiThue.getModel();
+               model.removeRow(row);
             }
 
             @Override
             public void onView(int row) {
-                System.out.println("View row"+row);
+                System.out.println(".onView()");        
             }
         };
-        table.getColumnModel().getColumn(6).setCellRenderer(new TableActionCellRender());
-        table.getColumnModel().getColumn(6).setCellEditor(new TableActionCellEditor(event));
+        tbl_NguoiThue.getColumnModel().getColumn(6).setCellRenderer(new TableActionCellRender());
+        tbl_NguoiThue.getColumnModel().getColumn(6).setCellEditor(new TableActionCellEditor(event));
     }
 
     /**
@@ -71,11 +71,9 @@ public class TrangChu extends javax.swing.JFrame {
         tbTrangChu = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         tbNguoiThue = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table = new javax.swing.JTable();
-        jPanel11 = new javax.swing.JPanel();
-        jb_Them = new javax.swing.JButton();
+        tbl_NguoiThue = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
         tbHoaDon = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         tbNhaCungCap = new javax.swing.JPanel();
@@ -301,7 +299,7 @@ public class TrangChu extends javax.swing.JFrame {
         tbNguoiThue.setPreferredSize(new java.awt.Dimension(873, 371));
         tbNguoiThue.setVerifyInputWhenFocusTarget(false);
 
-        table.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_NguoiThue.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -309,65 +307,40 @@ public class TrangChu extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã Người Thuê", "Họ", "Tên", "Ngày Sinh", "SDT", "Số Phòng", "Thao Tác"
+                "Mã Người Thuê", "Họ", "Tên", "Ngày Sinh", "SĐT", "Số Phòng", "Hành Động"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        table.setRowHeight(40);
-        jScrollPane1.setViewportView(table);
+        tbl_NguoiThue.setRowHeight(40);
+        jScrollPane1.setViewportView(tbl_NguoiThue);
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
-        );
-
-        jb_Them.setText("Thêm");
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(381, 381, 381)
-                .addComponent(jb_Them)
-                .addContainerGap(420, Short.MAX_VALUE))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(jb_Them)
-                .addGap(23, 23, 23))
-        );
+        jButton2.setText("Thêm");
 
         javax.swing.GroupLayout tbNguoiThueLayout = new javax.swing.GroupLayout(tbNguoiThue);
         tbNguoiThue.setLayout(tbNguoiThueLayout);
         tbNguoiThueLayout.setHorizontalGroup(
             tbNguoiThueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tbNguoiThueLayout.createSequentialGroup()
+                .addContainerGap(846, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
         );
         tbNguoiThueLayout.setVerticalGroup(
             tbNguoiThueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tbNguoiThueLayout.createSequentialGroup()
-                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -422,7 +395,7 @@ public class TrangChu extends javax.swing.JFrame {
         );
         tbThietBiLayout.setVerticalGroup(
             tbThietBiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 371, Short.MAX_VALUE)
+            .addGap(0, 389, Short.MAX_VALUE)
         );
 
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -649,6 +622,7 @@ public class TrangChu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
@@ -657,8 +631,6 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -674,8 +646,6 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JButton jbNhaCC;
     private javax.swing.JButton jbThietBi;
     private javax.swing.JButton jbTrangChu;
-    private javax.swing.JButton jb_Them;
-    private javax.swing.JTable table;
     private javax.swing.JPanel tbHoaDon;
     private javax.swing.JPanel tbHopDong;
     private javax.swing.JPanel tbLichSuThanhToan;
@@ -683,5 +653,6 @@ public class TrangChu extends javax.swing.JFrame {
     private javax.swing.JPanel tbNhaCungCap;
     private javax.swing.JPanel tbThietBi;
     private javax.swing.JPanel tbTrangChu;
+    private javax.swing.JTable tbl_NguoiThue;
     // End of variables declaration//GEN-END:variables
 }
