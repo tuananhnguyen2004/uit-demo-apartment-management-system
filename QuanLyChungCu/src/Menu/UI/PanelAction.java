@@ -20,30 +20,7 @@ public class PanelAction extends javax.swing.JPanel {
         initComponents();
     }
 
-    public void initEvent(TableActionEvent event, int row)
-    {
-        cmdEdit.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                event.onEdit(row);
-            }
-            
-        });
-        cmdDelete.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                event.onDelete(row);
-            }
-            
-        });
-        cmdView.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                event.onView(row);
-            }
-            
-        });
-    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -98,7 +75,17 @@ public class PanelAction extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+ private void cmdEditActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+    }                                       
 
+    private void cmdDeleteActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
+
+    private void cmdViewActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+    }                                       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Menu.UI.ActionButton actionButton1;
