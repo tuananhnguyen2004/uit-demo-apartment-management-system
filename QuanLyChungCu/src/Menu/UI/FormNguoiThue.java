@@ -4,6 +4,8 @@
  */
 package Menu.UI;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Hien
@@ -15,8 +17,29 @@ public class FormNguoiThue extends javax.swing.JFrame {
      */
     public FormNguoiThue() {
         initComponents();
+        TableActionEvent event = new TableActionEvent() {
+        @Override
+        public void onEdit(int row) {
+            System.out.println(".onEdit()");
+        }
+
+        @Override
+        public void onDelete(int row) {
+           if(tbl_NguoiThue.isEditing())
+                {
+                    tbl_NguoiThue.getCellEditor().stopCellEditing();
+                }
+           DefaultTableModel model = (DefaultTableModel) tbl_NguoiThue.getModel();
+           model.removeRow(row);
+        }
+
+        @Override
+        public void onView(int row) {
+            System.out.println(".onView()");        
+        }
+    };
         tbl_NguoiThue.getColumnModel().getColumn(6).setCellRenderer(new TableActionCellRender());
-        tbl_NguoiThue.getColumnModel().getColumn(6).setCellEditor(new TableActionCellEditor());
+        tbl_NguoiThue.getColumnModel().getColumn(6).setCellEditor(new TableActionCellEditor(event));
     }
 
     /**
@@ -118,13 +141,14 @@ public class FormNguoiThue extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        tbl_NguoiThue.setRowHeight(40);
         jScrollPane1.setViewportView(tbl_NguoiThue);
 
         jButton2.setText("Thêm");
@@ -134,21 +158,18 @@ public class FormNguoiThue extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(846, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 909, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
